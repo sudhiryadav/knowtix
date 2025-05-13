@@ -16,7 +16,6 @@ const ForgotPassword = () => {
 
     if (!email) {
       toast.error("Please enter your email address.");
-
       return;
     }
 
@@ -40,7 +39,7 @@ const ForgotPassword = () => {
       setEmail("");
       setLoader(false);
     } catch (error: any) {
-      toast.error(error?.response.data);
+      toast.error(error?.response?.data || "Something went wrong");
       setLoader(false);
     }
   };
@@ -56,20 +55,22 @@ const ForgotPassword = () => {
             >
               <div className="mb-10 text-center">
                 <Link href="/" className="mx-auto inline-block max-w-[160px]">
-                  <Image
-                    src="/images/logo/logo.svg"
-                    alt="logo"
-                    width={140}
-                    height={30}
-                    className="dark:hidden"
-                  />
-                  <Image
-                    src="/images/logo/logo-white.svg"
-                    alt="logo"
-                    width={140}
-                    height={30}
-                    className="hidden dark:block"
-                  />
+                  <div className="relative h-[30px] w-[140px]">
+                    <Image
+                      src="/images/logo/logo.svg"
+                      alt="logo"
+                      fill
+                      className="dark:hidden"
+                      priority
+                    />
+                    <Image
+                      src="/images/logo/logo-white.svg"
+                      alt="logo"
+                      fill
+                      className="hidden dark:block"
+                      priority
+                    />
+                  </div>
                 </Link>
               </div>
 
@@ -249,23 +250,23 @@ const ForgotPassword = () => {
                     />
                     <circle
                       cx="2.288"
-                      cy="13.6944"
+                      cy="13.7944"
                       r="1.39737"
-                      transform="rotate(-90 2.288 13.6944)"
+                      transform="rotate(-90 2.288 13.7944)"
                       fill="#3056D3"
                     />
                     <circle
                       cx="14.5849"
-                      cy="13.6943"
+                      cy="13.7943"
                       r="1.39737"
-                      transform="rotate(-90 14.5849 13.6943)"
+                      transform="rotate(-90 14.5849 13.7943)"
                       fill="#3056D3"
                     />
                     <circle
                       cx="26.7216"
-                      cy="13.6943"
+                      cy="13.7943"
                       r="1.39737"
-                      transform="rotate(-90 26.7216 13.6943)"
+                      transform="rotate(-90 26.7216 13.7943)"
                       fill="#3056D3"
                     />
                     <circle
@@ -277,9 +278,9 @@ const ForgotPassword = () => {
                     />
                     <circle
                       cx="2.288"
-                      cy="1.39739"
+                      cy="1.89139"
                       r="1.39737"
-                      transform="rotate(-90 2.288 1.39739)"
+                      transform="rotate(-90 2.288 1.89139)"
                       fill="#3056D3"
                     />
                     <circle
@@ -298,16 +299,16 @@ const ForgotPassword = () => {
                     />
                     <circle
                       cx="14.5849"
-                      cy="1.39761"
+                      cy="1.89139"
                       r="1.39737"
-                      transform="rotate(-90 14.5849 1.39761)"
+                      transform="rotate(-90 14.5849 1.89139)"
                       fill="#3056D3"
                     />
                     <circle
                       cx="26.7216"
-                      cy="1.39761"
+                      cy="1.89139"
                       r="1.39737"
-                      transform="rotate(-90 26.7216 1.39761)"
+                      transform="rotate(-90 26.7216 1.89139)"
                       fill="#3056D3"
                     />
                   </svg>

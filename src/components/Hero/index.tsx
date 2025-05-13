@@ -16,14 +16,25 @@ const Hero = () => {
                 data-wow-delay=".2s"
               >
                 <h1 className="mb-6 text-3xl font-bold leading-snug text-white sm:text-4xl sm:leading-snug lg:text-5xl lg:leading-[1.2]">
-                  Open-source SaaS Starter Kit and Boilerplate for Next.js
+                  Transform Your Documents into Interactive Conversations
                 </h1>
                 <p className="mx-auto mb-9 max-w-[600px] text-base font-medium text-white sm:text-lg sm:leading-[1.44]">
-                  Next.js SaaS Boilerplate and Starter Kit designed and built
-                  for SaaS startups. It comes with all necessary integrations,
-                  pages, and components you need to launch a feature-rich SaaS
-                  websites.
+                  Knowtix is an AI-powered platform that lets you upload PDFs, train the AI, and enable your users to have natural conversations with your documents. Make your content more accessible and engaging.
                 </p>
+                <div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
+                  <Link
+                    href="/signup"
+                    className="rounded-md bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80 hover:shadow-signUp"
+                  >
+                    Get Started Free
+                  </Link>
+                  <Link
+                    href="/about"
+                    className="inline-block rounded-md bg-dark px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-dark/80 hover:shadow-signUp dark:bg-white dark:text-dark dark:hover:bg-white/80"
+                  >
+                    Learn More
+                  </Link>
+                </div>
                 <ul className="mb-10 flex flex-wrap items-center justify-center gap-5">
                   <li>
                     <Link

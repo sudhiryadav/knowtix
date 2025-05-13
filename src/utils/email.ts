@@ -1,29 +1,56 @@
 import nodemailer from "nodemailer";
+import hbs from "nodemailer-express-handlebars";
+import path from "path";
 
-type EmailPayload = {
-  to: string;
-  subject: string;
-  html: string;
-};
-
-// Replace with your SMTP credentials
-const smtpOptions = {
+const transporter = nodemailer.createTransport({
   host: process.env.EMAIL_SERVER_HOST,
-  port: parseInt(process.env.EMAIL_SERVER_PORT || "2525"),
+  port: Number(process.env.EMAIL_SERVER_PORT),
   secure: false,
   auth: {
     user: process.env.EMAIL_SERVER_USER,
     pass: process.env.EMAIL_SERVER_PASSWORD,
   },
+});
+
+// Configure Handlebars
+const handlebarOptions = {
+  viewEngine: {
+    extName: ".hbs",
+    partialsDir: path.resolve("./src/templates/emails/"),
+    defaultLayout: false,
+  },
+  viewPath: path.resolve("./src/templates/emails/"),
+  extName: ".hbs",
 };
 
-export const sendEmail = async (data: EmailPayload) => {
-  const transporter = nodemailer.createTransport({
-    ...smtpOptions,
-  });
+transporter.use("compile", hbs(handlebarOptions));
 
-  return await transporter.sendMail({
-    from: process.env.EMAIL_FROM,
-    ...data,
-  });
-};
+export async function sendContactEmail(data: {
+  fullName: string;
+  email: string;
+  phone: string;
+  message: string;
+}) {
+  const { fullName, email, phone, message } = data;
+
+  const mailOptions = {
+    from: process.env.EMAIL_SERVER_USER,
+    to: process.env.CONTACT_EMAIL || 'er.sudhir.yadav@gmail.com',
+    subject: `New Contact Form Submission from ${fullName}`,
+    template: "contact",
+    context: {
+      fullName,
+      email,
+      phone,
+      message,
+    },
+  };
+
+  try {
+    await transporter.sendMail(mailOptions);
+    return true;
+  } catch (error) {
+    console.error("Error sending email:", error);
+    return false;
+  }
+}

@@ -3,8 +3,8 @@ import Breadcrumb from "@/components/Common/Breadcrumb";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title:
-    "Sign Up | Play SaaS Starter Kit and Boilerplate for Next.js",
+  title: "Sign Up | Knowtix - AI-Powered Document Conversations",
+  description: "Create your Knowtix account to start transforming your documents into interactive conversations.",
 };
 
 const SignupPage = () => {

@@ -3,7 +3,8 @@ import NotFound from "@/components/NotFound";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "404 Page | Play SaaS Starter Kit and Boilerplate for Next.js",
+  title: "Page Not Found | Knowtix - AI-Powered Document Conversations",
+  description: "The page you are looking for could not be found. Please return to the Knowtix homepage.",
 };
 
 const ErrorPage = () => {

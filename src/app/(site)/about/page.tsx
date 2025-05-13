@@ -4,9 +4,8 @@ import Team from "@/components/Team";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title:
-    "About Us | Play SaaS Starter Kit and Boilerplate for Next.js",
-  description: "This is About page description",
+  title: "About Us | Knowtix - AI-Powered Document Conversations",
+  description: "Learn about Knowtix's mission to make document knowledge accessible through AI-powered conversations.",
 };
 
 const AboutPage = () => {

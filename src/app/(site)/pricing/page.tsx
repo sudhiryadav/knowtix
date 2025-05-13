@@ -4,9 +4,8 @@ import Pricing from "@/components/Pricing";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title:
-    "Pricing Page | Play SaaS Starter Kit and Boilerplate for Next.js",
-  description: "This is pricing page description",
+  title: "Pricing | Knowtix - AI-Powered Document Conversations",
+  description: "Choose the perfect Knowtix plan for your organization's document conversation needs.",
 };
 
 const PricingPage = () => {

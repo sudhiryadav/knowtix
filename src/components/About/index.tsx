@@ -13,17 +13,12 @@ const About = () => {
             <div className="w-full px-4 lg:w-1/2">
               <div className="mb-12 max-w-[540px] lg:mb-0">
                 <h2 className="mb-5 text-3xl font-bold leading-tight text-dark dark:text-white sm:text-[40px] sm:leading-[1.2]">
-                  Brilliant Toolkit to Build Next.js SaaS Websites.
+                  Making Document Knowledge Accessible Through AI
                 </h2>
                 <p className="mb-10 text-base leading-relaxed text-body-color dark:text-dark-6">
-                  The main thrust is to focus on educating attendees on how to
-                  best protect highly vulnerable business applications with
-                  interactive panel discussions and roundtables led by subject
-                  matter experts.
+                  At Knowtix, we believe that valuable information locked in documents should be easily accessible to everyone. Our AI-powered platform transforms static PDFs into interactive conversations, making it easier for users to find and understand the information they need.
                   <br /> <br />
-                  The main thrust is to focus on educating attendees on how to
-                  best protect highly vulnerable business applications with
-                  interactive panel.
+                  Whether you&apos;re a business looking to make your documentation more user-friendly, an educational institution wanting to enhance learning materials, or an organization seeking to improve information accessibility, Knowtix provides the tools you need to make your content more engaging and accessible.
                 </p>
 
                 <Link
