@@ -62,16 +62,37 @@ model VerificationToken {
   @@unique([identifier, token])
 }
 
+model SubscriptionPlan {
+  id            String         @id @default(cuid())
+  name          String         @unique
+  description   String
+  price         Float
+  currency      String         @default("USD")
+  features      String[]
+  isActive      Boolean        @default(true)
+  createdAt     DateTime       @default(now())
+  updatedAt     DateTime       @updatedAt
+  subscriptions Subscription[]
+}
+
 model Subscription {
-  id                   String   @id @default(cuid())
-  user                 User     @relation(fields: [userId], references: [id], onDelete: Cascade)
-  userId               String   @unique
-  stripeCustomerId     String   @unique
-  stripeSubscriptionId String   @unique
-  status               String
-  currentPeriodEnd     DateTime
-  createdAt            DateTime @default(now())
-  updatedAt            DateTime @updatedAt
+  id                     String           @id @default(cuid())
+  userId                 String           @unique
+  user                   User             @relation(fields: [userId], references: [id])
+  planId                 String
+  plan                   SubscriptionPlan @relation(fields: [planId], references: [id])
+  razorpaySubscriptionId String           @unique
+  razorpayCustomerId     String
+  status                 String
+  currentPeriodStart     DateTime
+  currentPeriodEnd       DateTime
+  cancelledAt            DateTime?
+  lastPaymentId          String?
+  lastPaymentAmount      Float?
+  lastPaymentDate        DateTime?
+  lastPaymentError       String?
+  createdAt              DateTime         @default(now())
+  updatedAt              DateTime         @updatedAt
 }
 
 model Message {

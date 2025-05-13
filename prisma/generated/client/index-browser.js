@@ -159,13 +159,32 @@ exports.Prisma.VerificationTokenScalarFieldEnum = {
   expires: 'expires'
 };
 
+exports.Prisma.SubscriptionPlanScalarFieldEnum = {
+  id: 'id',
+  name: 'name',
+  description: 'description',
+  price: 'price',
+  currency: 'currency',
+  features: 'features',
+  isActive: 'isActive',
+  createdAt: 'createdAt',
+  updatedAt: 'updatedAt'
+};
+
 exports.Prisma.SubscriptionScalarFieldEnum = {
   id: 'id',
   userId: 'userId',
-  stripeCustomerId: 'stripeCustomerId',
-  stripeSubscriptionId: 'stripeSubscriptionId',
+  planId: 'planId',
+  razorpaySubscriptionId: 'razorpaySubscriptionId',
+  razorpayCustomerId: 'razorpayCustomerId',
   status: 'status',
+  currentPeriodStart: 'currentPeriodStart',
   currentPeriodEnd: 'currentPeriodEnd',
+  cancelledAt: 'cancelledAt',
+  lastPaymentId: 'lastPaymentId',
+  lastPaymentAmount: 'lastPaymentAmount',
+  lastPaymentDate: 'lastPaymentDate',
+  lastPaymentError: 'lastPaymentError',
   createdAt: 'createdAt',
   updatedAt: 'updatedAt'
 };
@@ -208,6 +227,7 @@ exports.Prisma.ModelName = {
   Session: 'Session',
   User: 'User',
   VerificationToken: 'VerificationToken',
+  SubscriptionPlan: 'SubscriptionPlan',
   Subscription: 'Subscription',
   Message: 'Message',
   ContactMessage: 'ContactMessage'

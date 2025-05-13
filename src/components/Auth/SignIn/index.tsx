@@ -9,6 +9,7 @@ import SocialSignIn from "../SocialSignIn";
 import SwitchOption from "../SwitchOption";
 import MagicLink from "../MagicLink";
 import Loader from "@/components/Common/Loader";
+import Logo from "@/components/Common/Logo";
 
 const Signin = () => {
   const router = useRouter();
@@ -58,22 +59,7 @@ const Signin = () => {
               data-wow-delay=".15s"
             >
               <div className="mb-10 text-center">
-                <Link href="/" className="mx-auto inline-block max-w-[160px]">
-                  <Image
-                    src="/images/logo/logo.svg"
-                    alt="logo"
-                    width={140}
-                    height={30}
-                    className="dark:hidden"
-                  />
-                  <Image
-                    src="/images/logo/logo-white.svg"
-                    alt="logo"
-                    width={140}
-                    height={30}
-                    className="hidden dark:block"
-                  />
-                </Link>
+                <Logo />
               </div>
 
               <SocialSignIn />

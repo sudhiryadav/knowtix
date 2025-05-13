@@ -30,11 +30,13 @@ const menuData: Menu[] = [
     title: "Blog",
     path: "/blogs",
     newTab: false,
+    hidden: true,
   },
   {
     id: 6,
     title: "Pages",
     newTab: false,
+    hidden: true,
     submenu: [
       {
         id: 61,
